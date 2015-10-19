@@ -1,6 +1,5 @@
 
 public class Item {
-	private FeatureVector features;
 	private int id;
 	private String description;
 	

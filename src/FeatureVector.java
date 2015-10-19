@@ -14,4 +14,8 @@ public class FeatureVector {
 		return features.length;
 	}
 	
+	public double dotProduct(FeatureVector other) {
+		
+		return -1;
+	}
 }
