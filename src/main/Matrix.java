@@ -1,3 +1,4 @@
+package main;
 
 public class Matrix {
 	private double[][] matrix;

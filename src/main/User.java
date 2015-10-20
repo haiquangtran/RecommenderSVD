@@ -1,3 +1,4 @@
+package main;
 
 public class User {
 	private int id;

@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-
+package main;
 
 public class SingularValueDecomposition {
 	private Parameters parameters = new Parameters();
@@ -9,7 +8,8 @@ public class SingularValueDecomposition {
 		
 	}
 	
-	
+	FeatureVector test = new FeatureVector(5);
+
 	
 	
 	public class Parameters {
