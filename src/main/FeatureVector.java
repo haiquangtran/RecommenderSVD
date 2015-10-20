@@ -5,6 +5,14 @@ public class FeatureVector {
 	
 	public FeatureVector(int vectorSize) {
 		this.features = new double[vectorSize];
+		initializeFeatures(features);
+	}
+	
+	public void initializeFeatures(double[] features) {
+		double initValue = 0.1;
+		for (int i = 0; i < features.length; i++) {
+			features[i] = initValue;
+		}
 	}
 	
 	public FeatureVector(double[] features) {
@@ -15,7 +23,7 @@ public class FeatureVector {
 		return features;
 	}
 	
-	public int getFeatureSize() {
+	public int getFeatureLength() {
 		return features.length;
 	}
 	
