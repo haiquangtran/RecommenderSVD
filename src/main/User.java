@@ -1,6 +1,7 @@
 package main;
 
 public class User {
+	private FeatureVector features;
 	private int id;
 
 	public User(int id) {
@@ -9,5 +10,9 @@ public class User {
 
 	public int getId() {
 		return id;
+	}
+	
+	public FeatureVector getFeatureVector() {
+		return features;
 	}
 }

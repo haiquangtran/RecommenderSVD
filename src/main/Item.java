@@ -1,6 +1,7 @@
 package main;
 
 public class Item {
+	private FeatureVector features;
 	private int id;
 	private String description;
 	
@@ -15,5 +16,9 @@ public class Item {
 	
 	public int getId() {
 		return id;
+	}
+	
+	public FeatureVector getFeatureVector() {
+		return features;
 	}
 }
