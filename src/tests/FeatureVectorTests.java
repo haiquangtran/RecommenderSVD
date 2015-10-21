@@ -1,10 +1,11 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
-import main.FeatureVector;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import svd.FeatureVector;
 
 public class FeatureVectorTests {
 	private FeatureVector featureVector;
@@ -12,7 +13,7 @@ public class FeatureVectorTests {
 	private double delta = 0;
 
 	/**
-	 * Sets up the test fixture. 
+	 * Sets up the test fixture.
 	 * (Called before every test case method.)
 	 */
 	@Before
@@ -21,7 +22,9 @@ public class FeatureVectorTests {
 	}
 
 	@Test
-	public void dotProductOfZerosShouldReturnZero() {	  		
+	public void dotProductOfZerosShouldReturnZero() {
+		featureVector = new FeatureVector(new double[]{0,0,0,0,0});
+
 		assertEquals(0, featureVector.dotProduct(featureVector), delta);
 		assertEquals(0, featureVector.dotProduct(new FeatureVector(new double[]{1,2,3,4,5})), delta);
 		assertEquals(0, featureVector.dotProduct(new FeatureVector(new double[]{-1,-1,-1,-1,-1})), delta);

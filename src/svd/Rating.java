@@ -1,4 +1,4 @@
-package main;
+package svd;
 
 public class Rating {
 	private int rating;

@@ -1,4 +1,4 @@
-package main;
+package svd;
 
 public class Matrix {
 	private double[][] matrix;
