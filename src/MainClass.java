@@ -12,7 +12,8 @@ public class MainClass {
 		int featureSize = 5;
 
 		Rating rating = new Rating(1, 1, 5);
-		Rating rating2 = new Rating(1, 1, 10);
+		Rating rating2 = new Rating(2, 2, 10);
+		Rating rating3 = new Rating(2, 1, 20);
 
 		User user = new User(1, featureSize);
 		User user2 = new User(2, featureSize);
@@ -23,6 +24,7 @@ public class MainClass {
 		SingularValueDecomposition svd = new SingularValueDecomposition();
 
 		svd.getRatings().add(rating);
+		svd.getRatings().add(rating3);
 		svd.getItems().put(item.getId(), item);
 		svd.getUsers().put(user.getId(), user);
 		svd.getRatings().add(rating2);
@@ -32,5 +34,6 @@ public class MainClass {
 
 		System.out.println(svd.predictRating(1, 1));
 		System.out.println(svd.predictRating(2, 2));
+		System.out.println(svd.predictRating(2, 1));
 	}
 }
