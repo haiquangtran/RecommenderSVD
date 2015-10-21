@@ -2,6 +2,7 @@ package svd;
 
 public class FeatureVector {
 	private double[] features;
+	private double initValue = 0.1;
 
 	public FeatureVector(int vectorSize) {
 		this.features = new double[vectorSize];
@@ -9,7 +10,6 @@ public class FeatureVector {
 	}
 
 	public void initializeFeatures(double[] features) {
-		double initValue = 0.1;
 		for (int i = 0; i < features.length; i++) {
 			features[i] = initValue;
 		}
@@ -46,7 +46,7 @@ public class FeatureVector {
 	public String toString() {
 		StringBuilder result = new StringBuilder();
 		for (int i = 0; i < features.length; i++) {
-			result.append(features[i] + " ");
+			result.append("[" + features[i] + "]");
 		}
 		return result.toString();
 	}

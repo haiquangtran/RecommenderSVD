@@ -13,7 +13,7 @@ public class SingularValueDecomposition {
 		super();
 	}
 
-	public SingularValueDecomposition(HashMap<Integer, User> users, HashMap<Integer, Item> items,ArrayList<Rating> ratings) {
+	public SingularValueDecomposition(HashMap<Integer, User> users, HashMap<Integer, Item> items, ArrayList<Rating> ratings) {
 		this.ratings = ratings;
 		this.items = items;
 		this.users = users;
@@ -26,7 +26,7 @@ public class SingularValueDecomposition {
 		stochasticGradientDescent();
 	}
 
-	public void stochasticGradientDescent() {
+	private void stochasticGradientDescent() {
 		// features in a vector
 		for (int rank = 0; rank < parameters.rank; rank++) {
 			// iterations
