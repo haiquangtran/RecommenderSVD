@@ -69,13 +69,16 @@ public class SingularValueDecompositionTests {
 	}
 
 	@Test
-	public void predictShouldReturnEstimatedRatingOfNegativeOne() {
-		int userId = 1;
-		int itemId = 1;
-		// rating of -1
-		createRatingHelper(userId, itemId, -1);
+	public void predictShouldReturnEstimatedRatingOfPositiveFiveAndNegativeTenForUserOne() {
+		int userIdOne = 1;
+		int itemIdOne = 1;
+		int itemIdTwo = 2;
+		// rating of 5 and -10
+		createRatingHelper(userIdOne, itemIdOne, 5);
+		createRatingHelper(userIdOne, itemIdTwo, -10);
 		svd.train();
-		assertEquals(-1, svd.predictRating(userId, itemId), delta);
+		assertEquals(5, svd.predictRating(userIdOne, itemIdOne), delta);
+		assertEquals(-10, svd.predictRating(userIdOne, itemIdTwo), delta);
 	}
 	
 	private void createRatingHelper(int userId, int itemId, int rating) {

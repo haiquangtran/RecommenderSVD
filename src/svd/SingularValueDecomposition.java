@@ -27,6 +27,8 @@ public class SingularValueDecomposition {
 	}
 
 	private void stochasticGradientDescent() {
+		//TODO: randomly shuffle the training set to optimize convergence
+
 		// features in a vector
 		for (int rank = 0; rank < parameters.rank; rank++) {
 			// iterations
@@ -37,10 +39,6 @@ public class SingularValueDecomposition {
 					Item item = items.get(ratings.get(i).getItemId());
 
 					double error = parameters.learningRate * (ratings.get(i).getRating() - predictRating(user.getId(), item.getId()));
-
-					System.out.println("ERROR : " + error + " " + predictRating(user.getId(), item.getId()));
-					System.out.println(user.getFeatureVector());
-					System.out.println(item.getFeatureVector());
 
 					double userVector = user.getFeatureVector().getFeatures()[rank];
 					double itemVector = item.getFeatureVector().getFeatures()[rank];
@@ -75,6 +73,7 @@ public class SingularValueDecomposition {
 		private int iterations = 5000;
 		private int rank = 5;
 		private double learningRate = 0.001;
+		private double minError = 0.0001;
 	}
 }
 
