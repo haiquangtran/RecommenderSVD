@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SingularValueDecomposition {
+	private Parameters parameters = new Parameters();
 	private ArrayList<Rating> ratings = new ArrayList<Rating>();
 	private HashMap<Integer, User> users = new HashMap<Integer, User>();
 	private HashMap<Integer, Item> items = new HashMap<Integer, Item>();
-	private Parameters parameters = new Parameters();
 
 	public SingularValueDecomposition () {
 		super();

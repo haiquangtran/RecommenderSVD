@@ -1,6 +1,10 @@
 
 
+import gui.MainFrame;
+
 import java.util.HashMap;
+
+import javax.swing.WindowConstants;
 
 import svd.*;
 
@@ -12,7 +16,7 @@ public class MainClass {
 		int featureSize = 5;
 
 		Rating rating = new Rating(1, 1, 5);
-//		Rating rating2 = new Rating(2, 2, 10);
+		Rating rating2 = new Rating(2, 2, 10);
 		Rating rating3 = new Rating(2, 1, -5);
 
 		User user = new User(1, featureSize);
@@ -27,7 +31,7 @@ public class MainClass {
 		svd.getRatings().add(rating3);
 		svd.getItems().put(item.getId(), item);
 		svd.getUsers().put(user.getId(), user);
-//		svd.getRatings().add(rating2);
+		svd.getRatings().add(rating2);
 		svd.getItems().put(item2.getId(), item2);
 		svd.getUsers().put(user2.getId(), user2);
 		svd.train();
@@ -35,5 +39,15 @@ public class MainClass {
 		System.out.println(svd.predictRating(1, 1));
 		System.out.println(svd.predictRating(2, 2));
 		System.out.println(svd.predictRating(2, 1));
+
+		// make window object
+		MainFrame GUI = new MainFrame();
+		GUI.init(); // init all our things!
+
+		// set window object size
+		GUI.setSize(800, 450);
+		GUI.setTitle("Title");
+		GUI.setVisible(true);
+		GUI.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
 }
