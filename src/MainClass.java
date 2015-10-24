@@ -41,13 +41,8 @@ public class MainClass {
 		System.out.println(svd.predictRating(2, 1));
 
 		// make window object
-		MainFrame GUI = new MainFrame();
-		GUI.init(); // init all our things!
-
-		// set window object size
-		GUI.setSize(800, 450);
-		GUI.setTitle("Title");
-		GUI.setVisible(true);
-		GUI.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		int width = 800;
+		int height = 500;
+		MainFrame GUI = new MainFrame(width, height);
 	}
 }

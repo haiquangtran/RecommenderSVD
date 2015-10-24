@@ -1,6 +1,7 @@
 package gui;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,51 +9,96 @@ import java.awt.event.ActionListener;
 public class MainFrame extends JFrame implements ActionListener {
 
 	private JLabel introLabel, inputLabel1, inputLabel2, inputLabel3;
+	private JLabel paramsLabel, paramsInputLabel1, paramsInputLabel2, paramsInputLabel3;
+	private JTextField paramsTextField1, paramsTextField2, paramsTextField3;
 	private JTextField textField1, textField2, textField3;
 	private JButton button1;
 	private JTextArea textArea1;
+
+	public MainFrame(int width, int height) {
+		// initialize components
+		init();
+		// set window object size
+		setUpWindow("Recommender System", width, height);
+	}
+	
+	public void setUpWindow(String title, int width, int height) {
+		setSize(width, height);
+		setTitle(title);
+		setVisible(true);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+	}
 
 	public void init() {
 		// create container to hold GUI in window
 		Container pane = this.getContentPane();
 		pane.setLayout(null);
 
+		//Starting position
+		int startX = 110;
+		int startY = 30;
+		int width = 120;
+		int height = 20;
+
 		// intro label
 		introLabel = new JLabel();
-		introLabel.setBounds(10, 10, 300, 20);
-		introLabel.setText("Quick intro to app");
+		introLabel.setBounds(10, 10, 500, height);
+		introLabel.setText("Recommender System: SVD");
 
-		//1
-		inputLabel1 = new JLabel("input1");
-		inputLabel1.setBounds(10, 30, 80, 20);
+		// label 1
+		inputLabel1 = new JLabel("User Id:");
+		inputLabel1.setBounds(10, startY, width-height, height);
 		textField1 = new JTextField();
-		textField1.setBounds(70, 30, 100, 20);
+		textField1.setBounds(startX, startY, width, height);
 
-		//2
-		inputLabel2 = new JLabel("input2");
-		inputLabel2.setBounds(10, 60, 80, 20);
+		// label 2
+		inputLabel2 = new JLabel("Item Id:");
+		inputLabel2.setBounds(10, startY * 2, width-height, height);
 		textField2 = new JTextField();
-		textField2.setBounds(70, 60, 100, 20);
+		textField2.setBounds(startX, startY * 2, width, height);
 
-		// 3
-		inputLabel3 = new JLabel("input3");
-		inputLabel3.setBounds(10, 90, 80, 20);
+		// label 3
+		inputLabel3 = new JLabel("Top N:");
+		inputLabel3.setBounds(10, startY * 3, width-height, height);
 		textField3 = new JTextField();
-		textField3.setBounds(70, 90, 100, 20);
+		textField3.setBounds(startX, startY * 3, width, height);
+		
+		// Parameters
+		paramsLabel = new JLabel();
+		paramsLabel.setBounds(10, startY * 4, 500, height);
+		paramsLabel.setText("Parameters");
+
+		// params 1
+		paramsInputLabel1 = new JLabel("Feature Size:");
+		paramsInputLabel1.setBounds(10, startY * 5, width-height, height);
+		paramsTextField1 = new JTextField();
+		paramsTextField1.setBounds(startX, startY * 5, width, height);
+
+		// params 2
+		paramsInputLabel2 = new JLabel("Iterations:");
+		paramsInputLabel2.setBounds(10, startY * 6, width-height, height);
+		paramsTextField2 = new JTextField();
+		paramsTextField2.setBounds(startX, startY * 6, width, height);
+
+		// params 3
+		paramsInputLabel3 = new JLabel("Regularization:");
+		paramsInputLabel3.setBounds(10, startY * 7, width-height, height);
+		paramsTextField3 = new JTextField();
+		paramsTextField3.setBounds(startX, startY * 7, width, height);
 
 		// generate button
-		button1 = new JButton("button!");
-		button1.setBounds(10, 200, 100, 20);
+		button1 = new JButton("Recommend");
+		button1.setBounds(10, startY * 8, width, height);
 
-		//add listener to button
+		// add listener to button
 		button1.addActionListener(this);
 
-		//text area output (with formatted font)
-		textArea1 = new JTextArea("My Text Area!");
+		// text area output (with formatted font)
+		textArea1 = new JTextArea("My Recommendations!");
 		textArea1.setFont(new Font("monospaced", Font.PLAIN, 12));
 		textArea1.setBounds(250, 20, 500, 400);
 
-		//add all of the things to the pane
+		// add all components to the pane
 		pane.add(introLabel);
 		pane.add(inputLabel1);
 		pane.add(inputLabel2);
@@ -60,6 +106,13 @@ public class MainFrame extends JFrame implements ActionListener {
 		pane.add(textField1);
 		pane.add(textField2);
 		pane.add(textField3);
+		pane.add(paramsLabel);
+		pane.add(paramsInputLabel1);
+		pane.add(paramsInputLabel2);
+		pane.add(paramsInputLabel3);
+		pane.add(paramsTextField1);
+		pane.add(paramsTextField2);
+		pane.add(paramsTextField3);
 		pane.add(button1);
 		pane.add(textArea1);
 	}
