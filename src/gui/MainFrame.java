@@ -21,7 +21,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		// set window object size
 		setUpWindow("Recommender System", width, height);
 	}
-	
+
 	public void setUpWindow(String title, int width, int height) {
 		setSize(width, height);
 		setTitle(title);
@@ -62,7 +62,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		inputLabel3.setBounds(10, startY * 3, width-height, height);
 		textField3 = new JTextField();
 		textField3.setBounds(startX, startY * 3, width, height);
-		
+
 		// Parameters
 		paramsLabel = new JLabel();
 		paramsLabel.setBounds(10, startY * 4, 500, height);
@@ -135,4 +135,73 @@ public class MainFrame extends JFrame implements ActionListener {
 			//warnings..
 		}
 	}
+
+	/**
+	 * Getters
+	 */
+
+	public JLabel getIntroLabel() {
+		return introLabel;
+	}
+
+	public JLabel getInputLabel1() {
+		return inputLabel1;
+	}
+
+	public JLabel getInputLabel2() {
+		return inputLabel2;
+	}
+
+	public JLabel getInputLabel3() {
+		return inputLabel3;
+	}
+
+	public JLabel getParamsLabel() {
+		return paramsLabel;
+	}
+
+	public JLabel getParamsInputLabel1() {
+		return paramsInputLabel1;
+	}
+
+	public JLabel getParamsInputLabel2() {
+		return paramsInputLabel2;
+	}
+
+	public JLabel getParamsInputLabel3() {
+		return paramsInputLabel3;
+	}
+
+	public JTextField getParamsTextField1() {
+		return paramsTextField1;
+	}
+
+	public JTextField getParamsTextField2() {
+		return paramsTextField2;
+	}
+
+	public JTextField getParamsTextField3() {
+		return paramsTextField3;
+	}
+
+	public JTextField getTextField1() {
+		return textField1;
+	}
+
+	public JTextField getTextField2() {
+		return textField2;
+	}
+
+	public JTextField getTextField3() {
+		return textField3;
+	}
+	
+	public JButton getButton1() {
+		return button1;
+	}
+	
+	public JTextArea getTextArea1() {
+		return textArea1;
+	}
+	
 }
