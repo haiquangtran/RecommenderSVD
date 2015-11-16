@@ -39,10 +39,5 @@ public class MainClass {
 		System.out.println(svd.predictRating(1, 1));
 		System.out.println(svd.predictRating(2, 2));
 		System.out.println(svd.predictRating(2, 1));
-
-		// make window object
-		int width = 800;
-		int height = 500;
-		MainFrame GUI = new MainFrame(width, height);
 	}
 }
