@@ -27,17 +27,19 @@ public class MainClass {
 
 		SingularValueDecomposition svd = new SingularValueDecomposition();
 
-		svd.getRatings().add(rating);
-		svd.getRatings().add(rating3);
-		svd.getItems().put(item.getId(), item);
-		svd.getUsers().put(user.getId(), user);
-		svd.getRatings().add(rating2);
-		svd.getItems().put(item2.getId(), item2);
-		svd.getUsers().put(user2.getId(), user2);
-		svd.train();
-
-		System.out.println(svd.predictRating(1, 1));
-		System.out.println(svd.predictRating(2, 2));
-		System.out.println(svd.predictRating(2, 1));
+//		svd.getRatings().add(rating);
+//		svd.getRatings().add(rating3);
+//		svd.getItems().put(item.getId(), item);
+//		svd.getUsers().put(user.getId(), user);
+//		svd.getRatings().add(rating2);
+//		svd.getItems().put(item2.getId(), item2);
+//		svd.getUsers().put(user2.getId(), user2);
+//		svd.train();
+//
+//		System.out.println(svd.predictRating(1, 1));
+//		System.out.println(svd.predictRating(2, 2));
+//		System.out.println(svd.predictRating(2, 1));
+//		
+		MainFrame gui = new MainFrame(900, 500);
 	}
 }
