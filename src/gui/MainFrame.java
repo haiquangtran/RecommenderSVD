@@ -12,7 +12,8 @@ public class MainFrame extends JFrame implements ActionListener {
 	private JLabel paramsLabel, paramsInputLabel1, paramsInputLabel2, paramsInputLabel3;
 	private JTextField paramsTextField1, paramsTextField2, paramsTextField3;
 	private JTextField textField1, textField2, textField3;
-	private JButton button1;
+	private JButton recommendButton;
+	private JButton evaluationButton;
 	private JTextArea textArea1;
 
 	public MainFrame(int width, int height) {
@@ -86,12 +87,14 @@ public class MainFrame extends JFrame implements ActionListener {
 		paramsTextField3 = new JTextField();
 		paramsTextField3.setBounds(startX, startY * 7, width, height);
 
-		// generate button
-		button1 = new JButton("Recommend");
-		button1.setBounds(10, startY * 8, width, height);
+		// generate buttons
+		recommendButton = new JButton("Recommend");
+		recommendButton.setBounds(10, startY * 8, width, height);
+		evaluationButton = new JButton("Evaluate");
+		evaluationButton.setBounds(10, startY * 9, width, height);
 
 		// add listener to button
-		button1.addActionListener(this);
+		recommendButton.addActionListener(this);
 
 		// text area output (with formatted font)
 		textArea1 = new JTextArea("My Recommendations!");
@@ -113,7 +116,8 @@ public class MainFrame extends JFrame implements ActionListener {
 		pane.add(paramsTextField1);
 		pane.add(paramsTextField2);
 		pane.add(paramsTextField3);
-		pane.add(button1);
+		pane.add(recommendButton);
+		pane.add(evaluationButton);
 		pane.add(textArea1);
 	}
 
